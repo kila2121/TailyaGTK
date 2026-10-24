@@ -1,0 +1,73 @@
+button {
+  border-radius: $pill;
+}
+
+button.circular {
+  border-radius: 9999px;
+}
+
+.linked:not(.vertical) > button:first-child {
+  border-radius: $pill 0 0 $pill;
+}
+
+.linked:not(.vertical) > button:last-child {
+  border-radius: 0 $pill $pill 0;
+}
+
+.linked:not(.vertical) > button:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.linked:not(.vertical) > button:only-child {
+  border-radius: $pill;
+}
+
+.linked:not(.vertical) > button.circular {
+  border-radius: 9999px;
+}
+
+.linked.vertical > button:first-child {
+  border-radius: $radius-s $radius-s 0 0;
+}
+
+.linked.vertical > button:last-child {
+  border-radius: 0 0 $radius-s $radius-s;
+}
+
+.linked.vertical > button:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.linked.vertical > button:only-child {
+  border-radius: $radius-s;
+}
+
+entry,
+spinbutton:not(.vertical) {
+  border-radius: $radius-s;
+}
+
+list.boxed-list,
+.card {
+  border-radius: $radius-l;
+}
+
+popover > contents {
+  border-radius: $radius-l;
+}
+
+popover.menu modelbutton {
+  border-radius: $radius-s;
+}
+
+tooltip.background {
+  border-radius: $radius-s;
+}
+
+.navigation-sidebar > row {
+  border-radius: $radius-s;
+}
+
+.navigation-sidebar > row:selected {
+  background-color: rgba($accent, 0.35);
+}

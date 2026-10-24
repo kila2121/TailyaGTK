@@ -1,0 +1,352 @@
+.popup-menu-content,
+.quick-settings,
+.datemenu-calendar-column,
+.dash-background,
+#dash .dash-background {
+    background-color: rgba(30, 30, 30, 0.5) !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+}
+
+.popup-menu-boxpointer,
+.candidate-popup-boxpointer {
+    -arrow-border-width: 0 !important;
+    -arrow-border-color: transparent !important;
+}
+
+.overview-tile .overview-icon,
+.icon-grid .overview-tile,
+.dash-item-container button,
+.dash-item-container st-button,
+#dash .dash-item-container st-widget,
+#dash .button {
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+.calendar-day-base,
+.calendar-day,
+.calendar-day-button,
+.calendar-day-base st-button {
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+.calendar-day-base:hover {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    border-radius: 99px !important;
+}
+
+.calendar-today,
+.calendar-today:active,
+.calendar-today:selected {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-radius: 99px !important;
+}
+
+.datemenu-today-button,
+.world-clocks-button,
+.weather-button,
+.events-button,
+.calendar-month-label,
+.calendar-change-month-back,
+.calendar-change-month-forward,
+.pager-button,
+.calendar-day-heading {
+    background-color: rgba(255, 255, 255, 0.10) !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    transition-duration: 150ms;
+}
+
+.datemenu-today-button:hover,
+.world-clocks-button:hover,
+.weather-button:hover,
+.events-button:hover,
+.calendar-month-label:hover,
+.calendar-change-month-back:hover,
+.calendar-change-month-forward:hover,
+.pager-button:hover {
+    background-color: rgba(255, 255, 255, 0.20) !important;
+}
+
+.popup-menu-content StLabel,
+.aggregate-menu StLabel,
+.quick-settings StLabel,
+.notification-banner StLabel,
+.message StLabel,
+.datemenu-calendar-column StLabel,
+.datemenu-today-button StLabel,
+.world-clocks-button StLabel,
+.weather-button StLabel,
+.events-button StLabel,
+.message-list-placeholder,
+.message-list-placeholder StLabel,
+.dnd-button StLabel,
+.calendar-day,
+.calendar-day-base,
+.calendar-day-base StLabel,
+.calendar-month-label,
+.calendar-day-heading,
+.day-label,
+.date-label {
+    color: #ffffff !important;
+}
+
+.calendar-other-month-day,
+.calendar-other-month-day StLabel {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.message-list-placeholder StIcon {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.notification-banner,
+.message,
+.message-list .message {
+    background-color: rgb(35, 35, 35) !important;
+    border: none !important;
+    border-radius: 16px !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35) !important;
+}
+
+.notification-banner:hover,
+.message:hover {
+    background-color: rgb(46, 46, 46) !important;
+}
+
+.message-list-sections {
+    spacing: 10px;
+}
+
+.message .message-body,
+.notification-banner .message-body {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.message .message-source-title,
+.notification-banner .message-source-title,
+.message .message-secondary-bin StLabel {
+    color: rgba(255, 255, 255, 0.55) !important;
+}
+
+.message-close-button,
+.message-expand-button,
+.notification-button,
+.message-list-clear-button,
+.modal-dialog-linked-button,
+.dialog-button,
+.modal-dialog .button {
+    background-color: rgba(255, 255, 255, 0.10) !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 99px !important;
+    transition-duration: 150ms;
+}
+
+.message-close-button:hover,
+.message-expand-button:hover,
+.notification-button:hover,
+.message-list-clear-button:hover,
+.modal-dialog-linked-button:hover,
+.dialog-button:hover,
+.modal-dialog .button:hover {
+    background-color: rgba(255, 255, 255, 0.20) !important;
+}
+
+.message-close-button:active,
+.message-expand-button:active,
+.notification-button:active,
+.message-list-clear-button:active,
+.modal-dialog-linked-button:active,
+.dialog-button:active,
+.modal-dialog .button:active {
+    background-color: rgba(255, 255, 255, 0.30) !important;
+}
+
+.modal-dialog-linked-button:default,
+.dialog-button:default,
+.modal-dialog .button:default {
+    background-color: rgb(117, 84, 209) !important;
+}
+
+.modal-dialog-linked-button:default:hover,
+.dialog-button:default:hover,
+.modal-dialog .button:default:hover {
+    background-color: rgb(135, 105, 222) !important;
+}
+
+.message-list-clear-button {
+    padding: 6px 18px !important;
+}
+
+.notification-button {
+    padding: 6px 14px !important;
+}
+
+.message-list-clear-button:insensitive {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.message-media-control {
+    color: #ffffff !important;
+}
+
+.message-media-control:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-radius: 99px !important;
+}
+
+.popup-menu-item:hover,
+.popup-menu-item:focus,
+.popup-menu-item:active,
+.popup-menu-item:selected {
+    background-color: rgba(255, 255, 255, 0.14) !important;
+    color: #ffffff !important;
+}
+
+.popup-menu-content StIcon,
+.quick-settings StIcon {
+    color: #ffffff !important;
+}
+
+.popup-separator-menu-item .popup-separator-menu-item-separator {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.quick-toggle,
+.quick-toggle-arrow,
+.quick-settings .icon-button,
+.quick-toggle-menu .icon-button,
+.system-menu-action {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    transition-duration: 150ms;
+}
+
+.quick-toggle:hover,
+.quick-toggle-arrow:hover,
+.quick-settings .icon-button:hover,
+.quick-toggle-menu .icon-button:hover,
+.system-menu-action:hover {
+    background-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+.quick-toggle:active,
+.quick-toggle-arrow:active,
+.quick-settings .icon-button:active,
+.quick-toggle-menu .icon-button:active,
+.system-menu-action:active {
+    background-color: rgba(255, 255, 255, 0.30) !important;
+}
+
+.quick-toggle:checked,
+.quick-toggle-arrow:checked,
+.quick-settings .icon-button:checked {
+    background-color: rgb(117, 84, 209) !important;
+    color: #ffffff !important;
+}
+
+.quick-toggle:checked:hover,
+.quick-toggle-arrow:checked:hover,
+.quick-settings .icon-button:checked:hover {
+    background-color: rgb(135, 105, 222) !important;
+}
+
+.quick-toggle:checked:active,
+.quick-toggle-arrow:checked:active,
+.quick-settings .icon-button:checked:active {
+    background-color: rgb(100, 70, 190) !important;
+}
+
+.quick-toggle-menu {
+    background-color: rgba(38, 38, 38, 0.92) !important;
+    border: none !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35) !important;
+}
+
+.quick-toggle-menu StLabel,
+.quick-toggle-menu StIcon {
+    color: #ffffff !important;
+}
+
+.quick-toggle-menu .header .subtitle {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.quick-toggle-menu .header .icon {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    color: #ffffff !important;
+}
+
+.modal-dialog,
+.end-session-dialog {
+    background-color: rgba(30, 30, 30, 0.92) !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.modal-dialog StLabel,
+.message-dialog-title {
+    color: #ffffff !important;
+}
+
+.modal-dialog .message-dialog-subtitle,
+.modal-dialog .message-dialog-body,
+.modal-dialog .end-session-dialog-description,
+.modal-dialog .end-session-dialog-warning {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.slider {
+    -barlevel-background-color: rgba(255, 255, 255, 0.18) !important;
+    -barlevel-active-background-color: rgb(117, 84, 209) !important;
+}
+
+.toggle-switch:checked {
+    background-color: rgb(117, 84, 209) !important;
+}
+
+.modal-dialog StButton,
+.modal-dialog-button-box StButton {
+    background-color: rgba(255, 255, 255, 0.14) !important;
+    background-image: none !important;
+    border: none !important;
+    border-radius: 99px !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
+    transition-duration: 150ms;
+}
+
+.modal-dialog StButton StLabel,
+.modal-dialog-button-box StButton StLabel {
+    color: #ffffff !important;
+}
+
+.modal-dialog StButton:hover,
+.modal-dialog-button-box StButton:hover {
+    background-color: rgba(255, 255, 255, 0.24) !important;
+}
+
+.modal-dialog StButton:active,
+.modal-dialog-button-box StButton:active {
+    background-color: rgba(255, 255, 255, 0.32) !important;
+}
+
+.modal-dialog StButton:default,
+.modal-dialog-button-box StButton:default {
+    background-color: rgb(117, 84, 209) !important;
+}
+
+.modal-dialog StButton:default:hover,
+.modal-dialog-button-box StButton:default:hover {
+    background-color: rgb(135, 105, 222) !important;
+}

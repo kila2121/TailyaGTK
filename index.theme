@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=TailyaGTK
+Comment=Translucent dark theme for GNOME Shell, GTK 3 and GTK 4
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=TailyaGTK
+MetacityTheme=TailyaGTK
+IconTheme=Adwaita
+CursorTheme=Adwaita
+ButtonLayout=appmenu:minimize,maximize,close
