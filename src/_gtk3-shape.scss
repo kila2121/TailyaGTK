@@ -1,0 +1,155 @@
+button {
+  background-image: none;
+  background-color: $fill;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  border-radius: $pill;
+  color: $fg;
+}
+
+button.circular {
+  border-radius: 9999px;
+}
+
+button:hover {
+  background-image: none;
+  background-color: $fill-hover;
+}
+
+button:active,
+button:checked {
+  background-image: none;
+  background-color: $fill-active;
+}
+
+button:disabled {
+  background-image: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #8a8a8a;
+}
+
+button.flat {
+  background-color: transparent;
+}
+
+button.flat:hover {
+  background-color: $fill;
+}
+
+button.suggested-action,
+button.suggested-action:checked {
+  background-image: none;
+  background-color: $accent;
+  color: $fg;
+}
+
+button.suggested-action:hover {
+  background-image: none;
+  background-color: $accent-hover;
+}
+
+button.suggested-action:active {
+  background-image: none;
+  background-color: $accent-active;
+}
+
+button.destructive-action {
+  background-image: none;
+  background-color: $destructive;
+  color: $fg;
+}
+
+headerbar,
+.titlebar {
+  background-image: none;
+  background-color: $headerbar-bg;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+entry,
+spinbutton {
+  border-radius: $radius-s;
+  background-image: none;
+  background-color: $fill;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+entry:focus,
+spinbutton:focus {
+  box-shadow: inset 0 0 0 2px $accent;
+}
+
+menu,
+.menu,
+.popup,
+popover.background {
+  border-radius: $radius-m;
+}
+
+menuitem:hover,
+modelbutton:hover {
+  background-color: $fill-hover;
+}
+
+tooltip.background {
+  border-radius: $radius-s;
+}
+
+switch:checked {
+  background-image: none;
+  background-color: $accent;
+}
+
+scale highlight,
+progressbar progress,
+levelbar block.filled {
+  background-image: none;
+  background-color: $accent;
+}
+
+selection,
+row:selected,
+treeview.view:selected,
+iconview:selected {
+  background-color: $accent;
+  color: $fg;
+}
+
+.linked:not(.vertical) > button:first-child {
+  border-radius: $pill 0 0 $pill;
+}
+
+.linked:not(.vertical) > button:last-child {
+  border-radius: 0 $pill $pill 0;
+}
+
+.linked:not(.vertical) > button:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.linked:not(.vertical) > button:only-child {
+  border-radius: $pill;
+}
+
+.linked:not(.vertical) > button.circular {
+  border-radius: 9999px;
+}
+
+.linked.vertical > button:first-child {
+  border-radius: $radius-s $radius-s 0 0;
+}
+
+.linked.vertical > button:last-child {
+  border-radius: 0 0 $radius-s $radius-s;
+}
+
+.linked.vertical > button:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+
+.linked.vertical > button:only-child {
+  border-radius: $radius-s;
+}
