@@ -6,7 +6,7 @@ Encoding=UTF-8
 
 [X-GNOME-Metatheme]
 GtkTheme=TailyaGTK
-MetacityTheme=TailyaGTK
+MetacityTheme=Adwaita
 IconTheme=Adwaita
 CursorTheme=Adwaita
 ButtonLayout=appmenu:minimize,maximize,close

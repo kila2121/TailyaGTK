@@ -110,10 +110,12 @@ levelbar block.filled {
   background-color: $accent;
 }
 
-selection,
+*:selected,
 row:selected,
 treeview.view:selected,
-iconview:selected {
+iconview:selected,
+entry selection,
+textview text selection {
   background-color: $accent;
   color: $fg;
 }
@@ -152,4 +154,27 @@ iconview:selected {
 
 .linked.vertical > button:only-child {
   border-radius: $radius-s;
+}
+
+scrollbar {
+  background: transparent;
+
+  slider {
+    background-color: rgba(255, 255, 255, 0.18);
+    border-radius: 99px;
+    min-width: 8px;
+    min-height: 8px;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.28);
+    }
+  }
+}
+
+switch {
+  border-radius: 99px;
+
+  slider {
+    border-radius: 99px;
+  }
 }

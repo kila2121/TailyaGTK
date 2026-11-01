@@ -71,3 +71,11 @@ tooltip.background {
 .navigation-sidebar > row:selected {
   background-color: rgba($accent, 0.35);
 }
+
+spinbutton:not(.vertical) > button {
+  border-radius: 0;
+}
+
+button.card {
+  border-radius: $radius-l;
+}
