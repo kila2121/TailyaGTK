@@ -350,3 +350,53 @@
 .modal-dialog-button-box StButton:default:hover {
     background-color: rgb(135, 105, 222) !important;
 }
+
+.popup-sub-menu {
+    background-color: rgba(255, 255, 255, 0.06) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.popup-sub-menu .popup-menu-item {
+    background-color: transparent !important;
+    color: #ffffff !important;
+}
+
+.popup-menu-item:checked,
+.popup-sub-menu .popup-menu-item:checked {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    color: #ffffff !important;
+}
+
+.popup-menu-item:checked:hover,
+.popup-sub-menu .popup-menu-item:checked:hover,
+.popup-sub-menu .popup-menu-item:hover,
+.popup-sub-menu .popup-menu-item:focus {
+    background-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.popup-menu-item:checked:active,
+.popup-sub-menu .popup-menu-item:active {
+    background-color: rgba(255, 255, 255, 0.24) !important;
+}
+
+.popup-menu-item:insensitive,
+.popup-sub-menu .popup-menu-item:insensitive {
+    background-color: transparent !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.dashtodock-app-well-preview-menu-item,
+.dashtodock-app-well-preview-menu-item StLabel {
+    color: #ffffff !important;
+}
+
+.window-close {
+    background-color: rgba(255, 255, 255, 0.20) !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+.window-close:hover {
+    background-color: rgba(255, 255, 255, 0.32) !important;
+}
