@@ -4,7 +4,7 @@
 
 **Стеклянная (glassmorphism) тема для GNOME — Shell, GTK 3, GTK 4 и libadwaita.**
 
-Тот же полупрозрачный фиолетовый вид, что и у [Tailya](https://github.com/seumanu-gs/TailyaGTK), теперь распространённый на все приложения на рабочем столе.
+Тот же полупрозрачный фиолетовый вид, что и у [Tailya](https://github.com/kila2121/Tailya.git), теперь распространённый на все приложения на рабочем столе.
 
 [English](README.md) · **Русский**
 
@@ -270,8 +270,7 @@ GNOME 47+ мог переименовать или добавить селект
 
 ## Благодарности
 
-- Стиль GNOME Shell начался как модификация [seumanu-gs/TailyaGTK](https://github.com/seumanu-gs/TailyaGTK) (MIT).
-- `gtk-3.0/gtk.css` и `gtk-4.0/gtk.css` сгенерированы из стоковых стилей GTK Adwaita (LGPL-2.1-or-later) с заменой цветов.
+- Стиль GNOME Shell начался как модификация [kila2121/Tailya](https://github.com/kila2121/Tailya.git) (MIT).
 
 ## Лицензия
 

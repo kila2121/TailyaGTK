@@ -4,7 +4,7 @@
 
 **A glassmorphism theme for GNOME — Shell, GTK 3, GTK 4 and libadwaita.**
 
-The same translucent, purple-accented look as [Tailya](https://github.com/seumanu-gs/TailyaGTK), now extended to every application on your desktop.
+The same translucent, purple-accented look as [Tailya](https://github.com/kila2121/Tailya.git), now extended to every application on your desktop.
 
 **English** · [Русский](README.ru.md)
 
@@ -270,8 +270,7 @@ This removes `~/.themes/TailyaGTK`, restores any previous `~/.config/gtk-4.0/gtk
 
 ## Credits
 
-- GNOME Shell stylesheet started as a modification of [seumanu-gs/TailyaGTK](https://github.com/seumanu-gs/TailyaGTK) (MIT).
-- `gtk-3.0/gtk.css` and `gtk-4.0/gtk.css` are generated from the stock GTK Adwaita stylesheets (LGPL-2.1-or-later) with the colors replaced.
+- GNOME Shell stylesheet started as a modification of [kila2121/Tailya](https://github.com/kila2121/Tailya.git) (MIT).
 
 ## License
 
