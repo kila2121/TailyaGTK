@@ -1,19 +1,26 @@
 #!/usr/bin/env bash
 set -uo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-OUT="${1:-/tmp/TailyaGTK-test}"
+VARIANT="${2:-dark}"
+case "$VARIANT" in
+  dark) NAME="TailyaGTK"; GTK3_BASELINE="Adwaita:dark"; GTK3_THEME="TailyaGTK:dark" ;;
+  light) NAME="TailyaGTK-Light"; GTK3_BASELINE="Adwaita"; GTK3_THEME="TailyaGTK-Light" ;;
+  *) echo "usage: $0 [out-dir] [dark|light]"; exit 2 ;;
+esac
+THEME="$ROOT/themes/$NAME"
+OUT="${1:-/tmp/$NAME-test}"
 mkdir -p "$OUT/cfg/gtk-4.0" "$OUT/data/themes"
 status=0
 
-xvfb-run -a python3 "$ROOT/tests/lint_gtk4.py" "$ROOT/gtk-4.0/gtk.css" || status=1
-xvfb-run -a python3 "$ROOT/tests/lint_gtk4.py" "$ROOT/gtk-4.0/libadwaita.css" || status=1
-xvfb-run -a python3 "$ROOT/tests/lint_gtk3.py" "$ROOT/gtk-3.0/gtk.css" || status=1
+xvfb-run -a python3 "$ROOT/tests/lint_gtk4.py" "$THEME/gtk-4.0/gtk.css" || status=1
+xvfb-run -a python3 "$ROOT/tests/lint_gtk4.py" "$THEME/gtk-4.0/libadwaita.css" || status=1
+xvfb-run -a python3 "$ROOT/tests/lint_gtk3.py" "$THEME/gtk-3.0/gtk.css" || status=1
 
-rm -rf "$OUT/data/themes/TailyaGTK"; ln -s "$ROOT" "$OUT/data/themes/TailyaGTK"
+rm -rf "$OUT/data/themes/$NAME"; ln -s "$THEME" "$OUT/data/themes/$NAME"
 shot() {
   local name="$1"; shift
   xvfb-run -a -s "-screen 0 1100x720x24" bash -c "
-    export GDK_BACKEND=x11 GSK_RENDERER=cairo LIBGL_ALWAYS_SOFTWARE=1 NO_AT_BRIDGE=1 $*
+    export GDK_BACKEND=x11 GSK_RENDERER=cairo LIBGL_ALWAYS_SOFTWARE=1 NO_AT_BRIDGE=1 THEME_VARIANT=$VARIANT $*
     \$PYTHON_CMD &
     pid=\$!
     sleep 2.4
@@ -23,12 +30,12 @@ shot() {
 }
 
 rm -f "$OUT/cfg/gtk-4.0/gtk.css"
-PYTHON_CMD="python3 $ROOT/tests/preview_gtk4.py" XDG_CONFIG_HOME="$OUT/cfg-empty" shot gtk4-baseline "XDG_CONFIG_HOME=$OUT/cfg-empty"
-ln -s "$ROOT/gtk-4.0/libadwaita.css" "$OUT/cfg/gtk-4.0/gtk.css"
-PYTHON_CMD="python3 $ROOT/tests/preview_gtk4.py" shot gtk4-TailyaGTK "XDG_CONFIG_HOME=$OUT/cfg"
-PYTHON_CMD="python3 $ROOT/tests/preview_gtk4.py" shot gtk4-TailyaGTK-popover "XDG_CONFIG_HOME=$OUT/cfg TailyaGTK_POPOVER=1"
-PYTHON_CMD="python3 $ROOT/tests/preview_gtk3.py" shot gtk3-baseline "GTK_THEME=Adwaita:dark"
-PYTHON_CMD="python3 $ROOT/tests/preview_gtk3.py" shot gtk3-TailyaGTK "XDG_DATA_HOME=$OUT/data GTK_THEME=TailyaGTK:dark"
-PYTHON_CMD="python3 $ROOT/tests/preview_gtk4_plain.py" shot gtk4-plain "XDG_DATA_HOME=$OUT/data XDG_CONFIG_HOME=$OUT/cfg-empty GTK_THEME=TailyaGTK:dark"
+PYTHON_CMD="python3 $ROOT/tests/preview_gtk4.py" shot gtk4-baseline "XDG_CONFIG_HOME=$OUT/cfg-empty"
+ln -s "$THEME/gtk-4.0/libadwaita.css" "$OUT/cfg/gtk-4.0/gtk.css"
+PYTHON_CMD="python3 $ROOT/tests/preview_gtk4.py" shot gtk4-$NAME "XDG_CONFIG_HOME=$OUT/cfg"
+PYTHON_CMD="python3 $ROOT/tests/preview_gtk4.py" shot gtk4-$NAME-popover "XDG_CONFIG_HOME=$OUT/cfg TailyaGTK_POPOVER=1"
+PYTHON_CMD="python3 $ROOT/tests/preview_gtk3.py" shot gtk3-baseline "GTK_THEME=$GTK3_BASELINE"
+PYTHON_CMD="python3 $ROOT/tests/preview_gtk3.py" shot gtk3-$NAME "XDG_DATA_HOME=$OUT/data GTK_THEME=$GTK3_THEME"
+PYTHON_CMD="python3 $ROOT/tests/preview_gtk4_plain.py" shot gtk4-plain "XDG_DATA_HOME=$OUT/data XDG_CONFIG_HOME=$OUT/cfg-empty GTK_THEME=$GTK3_THEME"
 ls -l "$OUT"/*.png
 exit $status

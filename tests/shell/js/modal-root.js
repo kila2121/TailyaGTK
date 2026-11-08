@@ -1,0 +1,1 @@
+(function(){let r=null;function w(a){try{if(!r&&a.visible&&a.style_class&&String(a.style_class).indexOf('modal-dialog')>=0)r=a;}catch(e){}if(r)return;for(const c of a.get_children())w(c);}w(global.stage);if(!r)return 'no modal dialog';globalThis.__root=r;return 'modal dialog root set';})()

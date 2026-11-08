@@ -1,0 +1,1 @@
+(function(){let t=null;function w(a){try{if(a.popupMenu&&a.app&&a.app.get_windows().length>0&&!t)t=a;}catch(e){}for(const c of a.get_children())w(c);}w(global.stage);if(!t)return 'no dock icon with windows';t.popupMenu();globalThis.__dockIcon=t;return 'dock menu open for '+t.app.get_id();})()

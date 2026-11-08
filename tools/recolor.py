@@ -46,7 +46,16 @@ def recolor(rgb):
     return rgb
 
 
-def main(src, dst, asset_base):
+VARIANTS = {
+    "dark": {"accent_src": (0x15, 0x53, 0x9E), "grey": [(0, 0), (27, 18), (45, 24), (53, 30), (73, 42), (145, 138), (238, 255), (255, 255)]},
+    "light": {"accent_src": (0x35, 0x84, 0xE4), "grey": [(0, 0), (245, 242), (255, 255)]},
+}
+
+
+def main(src, dst, asset_base, variant="dark"):
+    global ACCENT_SRC, GREY_POINTS
+    ACCENT_SRC = VARIANTS[variant]["accent_src"]
+    GREY_POINTS = VARIANTS[variant]["grey"]
     text = open(src, encoding="utf-8").read()
     text = re.sub(r"/\*.*?\*/", "", text, flags=re.S)
     text = re.sub(
@@ -65,4 +74,4 @@ def main(src, dst, asset_base):
     open(dst, "w", encoding="utf-8").write(text)
 
 
-main(sys.argv[1], sys.argv[2], sys.argv[3])
+main(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4] if len(sys.argv) > 4 else "dark")

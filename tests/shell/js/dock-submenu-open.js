@@ -1,0 +1,1 @@
+(function(){const t=globalThis.__dockIcon;if(!t)return 'no dock icon';const m=t._menu;try{m._allWindowsMenuItem.menu.open(0);}catch(e){return 'no all-windows item: '+e;}globalThis.__root=m.actor;return 'all windows submenu open';})()

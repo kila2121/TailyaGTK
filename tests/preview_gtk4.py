@@ -13,7 +13,7 @@ class App(Adw.Application):
         self.connect("activate", self.on_activate)
 
     def on_activate(self, app):
-        Adw.StyleManager.get_default().set_color_scheme(Adw.ColorScheme.FORCE_DARK)
+        Adw.StyleManager.get_default().set_color_scheme(Adw.ColorScheme.FORCE_LIGHT if os.environ.get("THEME_VARIANT") == "light" else Adw.ColorScheme.FORCE_DARK)
         win = Adw.ApplicationWindow(application=app)
         win.set_default_size(980, 640)
         view = Adw.ToolbarView()

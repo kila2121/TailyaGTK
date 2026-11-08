@@ -1,0 +1,67 @@
+name: test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  generated:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install build tools
+        run: sudo apt-get update && sudo apt-get install -y sassc libglib2.0-bin libgtk-3-0 libgtk-4-1
+      - name: Generated CSS is up to date
+        run: ./tests/check_generated.sh
+
+  gtk:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y sassc libglib2.0-bin xvfb imagemagick python3-gi \
+            gir1.2-gtk-3.0 gir1.2-gtk-4.0 gir1.2-adw-1 adwaita-icon-theme librsvg2-common fonts-cantarell
+      - name: Build
+        run: ./build.sh
+      - name: Lint and screenshots (dark)
+        run: ./tests/run_tests.sh "$PWD/out/dark" dark
+      - name: Lint and screenshots (light)
+        run: ./tests/run_tests.sh "$PWD/out/light" light
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gtk-screenshots
+          path: out/**/*.png
+
+  shell:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        variant: [dark, light]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install GNOME Shell and tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends gnome-shell mutter libgl1-mesa-dri \
+            dbus-user-session dbus-x11 gettext gnome-session-bin gsettings-desktop-schemas \
+            librsvg2-common fonts-cantarell adwaita-icon-theme gnome-shell-extensions \
+            gnome-calculator sassc git make python3-pip
+          pip install --break-system-packages python-dbusmock
+      - name: Install Dash to Dock
+        run: |
+          git clone --depth 1 https://github.com/micheleg/dash-to-dock.git /tmp/d2d
+          make -C /tmp/d2d install
+      - name: Shell theme test (${{ matrix.variant }})
+        run: ./tests/shell/run.sh --out "$PWD/out" --variant ${{ matrix.variant }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shell-${{ matrix.variant }}
+          path: |
+            out/*.png
+            out/audit-*.json
+            out/shell.log

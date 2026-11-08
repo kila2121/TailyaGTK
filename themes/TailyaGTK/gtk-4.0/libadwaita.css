@@ -45,36 +45,48 @@
 @define-color thumbnail_fg_color #ffffff;
 @define-color shade_color rgba(0, 0, 0, 0.25);
 @define-color scrollbar_outline_color rgba(0, 0, 0, 0.6);
-button.text-button {
+button {
   border-radius: 99px;
 }
 
-.linked:not(.vertical) > button.text-button:first-child {
+button.circular {
+  border-radius: 9999px;
+}
+
+.linked:not(.vertical) > button:first-child {
   border-radius: 99px 0 0 99px;
 }
 
-.linked:not(.vertical) > button.text-button:last-child {
+.linked:not(.vertical) > button:last-child {
   border-radius: 0 99px 99px 0;
 }
 
-.linked:not(.vertical) > button.text-button:not(:first-child):not(:last-child) {
+.linked:not(.vertical) > button:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
 
-.linked:not(.vertical) > button.text-button:only-child {
+.linked:not(.vertical) > button:only-child {
   border-radius: 99px;
 }
 
-.linked.vertical > button.text-button:first-child {
+.linked:not(.vertical) > button.circular {
+  border-radius: 9999px;
+}
+
+.linked.vertical > button:first-child {
   border-radius: 10px 10px 0 0;
 }
 
-.linked.vertical > button.text-button:last-child {
+.linked.vertical > button:last-child {
   border-radius: 0 0 10px 10px;
 }
 
-.linked.vertical > button.text-button:not(:first-child):not(:last-child) {
+.linked.vertical > button:not(:first-child):not(:last-child) {
   border-radius: 0;
+}
+
+.linked.vertical > button:only-child {
+  border-radius: 10px;
 }
 
 entry,
@@ -105,4 +117,12 @@ tooltip.background {
 
 .navigation-sidebar > row:selected {
   background-color: rgba(117, 84, 209, 0.35);
+}
+
+spinbutton:not(.vertical) > button {
+  border-radius: 0;
+}
+
+button.card {
+  border-radius: 16px;
 }

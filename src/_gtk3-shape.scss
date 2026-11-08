@@ -25,8 +25,8 @@ button:checked {
 
 button:disabled {
   background-image: none;
-  background-color: rgba(255, 255, 255, 0.05);
-  color: #8a8a8a;
+  background-color: $disabled-fill;
+  color: $disabled-fg;
 }
 
 button.flat {
@@ -41,7 +41,7 @@ button.suggested-action,
 button.suggested-action:checked {
   background-image: none;
   background-color: $accent;
-  color: $fg;
+  color: $on-accent;
 }
 
 button.suggested-action:hover {
@@ -57,7 +57,7 @@ button.suggested-action:active {
 button.destructive-action {
   background-image: none;
   background-color: $destructive;
-  color: $fg;
+  color: $on-accent;
 }
 
 headerbar,
@@ -117,7 +117,7 @@ iconview:selected,
 entry selection,
 textview text selection {
   background-color: $accent;
-  color: $fg;
+  color: $on-accent;
 }
 
 .linked:not(.vertical) > button:first-child {
@@ -160,13 +160,13 @@ scrollbar {
   background: transparent;
 
   slider {
-    background-color: rgba(255, 255, 255, 0.18);
+    background-color: $scroll-slider;
     border-radius: 99px;
     min-width: 8px;
     min-height: 8px;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.28);
+      background-color: $scroll-slider-hover;
     }
   }
 }

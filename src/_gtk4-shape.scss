@@ -69,7 +69,7 @@ tooltip.background {
 }
 
 .navigation-sidebar > row:selected {
-  background-color: rgba($accent, 0.35);
+  background-color: rgba($accent, $selection-alpha);
 }
 
 spinbutton:not(.vertical) > button {

@@ -1,0 +1,39 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package
+        run: |
+          VERSION="${GITHUB_REF_NAME}"
+          mkdir -p dist
+          for pair in "TailyaGTK:Dark" "TailyaGTK-Light:Light"; do
+            name="${pair%%:*}"
+            label="${pair##*:}"
+            stage="$(mktemp -d)"
+            cp -r "themes/$name" "$stage/$name"
+            cp install.sh uninstall.sh LICENSE README.md "$stage/"
+            (cd "$stage" && zip -qr "$GITHUB_WORKSPACE/dist/TailyaGTK-${label}-${VERSION}.zip" .)
+          done
+          stage="$(mktemp -d)"
+          cp -r themes "$stage/themes"
+          cp install.sh uninstall.sh LICENSE README.md "$stage/"
+          (cd "$stage" && zip -qr "$GITHUB_WORKSPACE/dist/TailyaGTK-All-${VERSION}.zip" .)
+          ls -l dist
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.zip
+          generate_release_notes: true
